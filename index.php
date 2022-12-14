@@ -1,3 +1,16 @@
+<?php
+require 'config.php';
+if(!empty($_SESSION["id"])){
+  $id = $_SESSION["id"];
+   $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
+   $row = mysqli_fetch_assoc($result);
+
+}
+//  else{
+//    header("Location: login.php");
+//  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,18 +22,57 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel='stylesheet' href='css/style.css'>
     <title>Document</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
   </head>
   <body>
-    <header>
-      <ul>
-        <li>
-          <a href="/home">home</a>
-          <a href="/login">login</a>
-          <a href="/shop">shop</a>
-        </li>
-      </ul>
-    </header>
+
+
+    <nav class="navbar">
+
+       <!-- LOGO -->
+      
+       <div class="logo">Post</div>
+
+
+      
+       <!-- NAVIGATION MENU -->
+      
+      <ul class="nav-links">
+      
+       <!-- USING CHECKBOX HACK -->
+      
+       <input type="checkbox" id="checkbox_toggle" />
+      
+       <label for="checkbox_toggle" class="hamburger">&#9776;</label>
+      
+       <!-- NAVIGATION MENUS -->
+
+
+      
+       <div class="menu">
+
+       <li><a href="index.php">Home</a></li>
+
+       <?php if (isset($row)): ?>
+        
+       <li><a href="myprofile.php"><i class="fa fa-user" aria-hidden="true"></i>&nbsp<?= htmlspecialchars($row["name"]) ?></a></li>
+        
+        <li><a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i></a></li>
+        
+       <?php else: ?>
+        
+        <li><a href="registration.php"><i class="fa fa-user" aria-hidden="true"></i></a></li>
+        
+       <?php endif; ?>
+      
+       
+      
+       <li><a href="/"><i class="fa-solid fa-cart-shopping"></i></a></li>
+      
+     </div>
+      
+     </ul>
+  </nav>
+
     <section id="home">
 
       <h1 class="homepage-heading">PostPost</h1>
