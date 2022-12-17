@@ -18,8 +18,8 @@ if(isset($_POST["submit"])){
     if($password == $confirmpassword){
       $query = "INSERT INTO tb_user VALUES(null,'$name','$username','$email','$password')";
       mysqli_query($conn, $query);
-      echo
-      "<script> alert('Registration Successful'); </script>";
+      header("Location: signup-success.html");
+      exit;
     }
     else{
       echo
@@ -34,24 +34,36 @@ if(isset($_POST["submit"])){
   <head>
     <meta charset="utf-8">
     <title>Registration</title>
+    <link rel='stylesheet' href='css/Registration.css'>
   </head>
   <body>
-    <h2>Registration</h2>
-    <form class="" action="" method="post" autocomplete="off">
+    <form  class="signup-form" action="" method="post" autocomplete="off">
+
+    <div class="form-header">
+      <h1>Register</h1>
+
+    </div>
+
+    <div class="form-body">
       <label for="name">Name : </label>
-      <input type="text" name="name" id = "name" required value=""> <br>
+      <input type="text" name="name" id = "name" required value="" placeholder="Enter Name"> <br>
       <label for="username">Username : </label>
-      <input type="text" name="username" id = "username" required value=""> <br>
+      <input type="text" name="username" id = "username" required value="" placeholder="Enter Username"> <br>
       <label for="email">Email : </label>
-      <input type="email" name="email" id = "email" required value=""> <br>
+      <input type="email" name="email" id = "email" required value="" placeholder="Email"> <br>
       <label for="password">Password : </label>
-      <input type="password" name="password" id = "password" required value=""> <br>
+      <input type="password" name="password" id = "password" required value="" placeholder="Enter Password"> <br>
       <label for="confirmpassword">Confirm Password : </label>
-      <input type="password" name="confirmpassword" id = "confirmpassword" required value=""> <br>
+      <input type="password" name="confirmpassword" id = "confirmpassword" required value="" placeholder="Confirm Password"> <br>
       <button type="submit" name="submit">Register</button>
+    </div>
+
+
+      <div class="form-footer">
+        <span>already have an account?&nbsp</span>
+        <a href="login.php">Login</a>
+      </div>
+
     </form>
-    <br>
-    <span>already have an account?&nbsp</span>
-    <a href="login.php">Login</a>
   </body>
 </html>

@@ -1,0 +1,52 @@
+@import url('httpss://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  background:linear-gradient(to right, #f8b814 0%, #ca7c28 50%, #ef7d12 99%) repeat;
+}
+
+.signup-form {
+  font-family: "Roboto", sans-serif;
+  width:650px;
+  margin:100px auto;
+  background:linear-gradient(to right, #ffffff 0%, #fafafa 50%, #ffffff 99%);
+  border-radius: 10px;
+}
+
+.form-header  {
+  background-color: #EFF0F1;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.form-header h1 {
+  font-size: 30px;
+  text-align:center;
+  color:#666;
+  padding:20px 0;
+  border-bottom:1px solid #cccccc;
+}
+
+.form-body{
+  padding: 20px;
+}
+
+.form-body input{
+  width: 30%;
+  margin-bottom: 10px;
+}
+
+.form-footer{
+  text-align: center;
+}
+
+button {
+  background-color: #f8b814;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
