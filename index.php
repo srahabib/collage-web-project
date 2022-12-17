@@ -5,12 +5,8 @@ if(!empty($_SESSION["id"])){
 $id = $_SESSION["id"];
 $res = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
 $row = mysqli_fetch_assoc($res);
-
 }
-
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -133,200 +129,26 @@ $row = mysqli_fetch_assoc($res);
 
     <!---------------------------- Photo Grid Desktop View Strarts Here  ----------------------------------->
 <div class="gallery">
-     <div class='y'>
-
       <?php
       // component("fds","23","img/c.jpg","1");
-      // component("fds","23","img/c0.jpg","1");
-      // component("fds","23","img/pa.jpg","1");
-      // component("fds","23","img/sushi.jpg","1");
-      // component("fds","23","img/smol.jpg","1");
 
       
     for ($col = 0; $col < 4; $col++) {
-      
-
-      if(($col) % 4 == 0){
-    
+      echo "<div class='y'>";
       $result = mysqli_query($conn,"SELECT * FROM Prouducttb");
+            $counter=0;
             while ($row = mysqli_fetch_assoc($result)){
+              
+              if(($counter-$col) % 4 == 0){
                 component($row['product_name'], $row['product_price'], $row['product_image'], $row['id']);
-            }
+              }
+              $counter++;
           }  
-
+          echo "</div>";
       };    
 
-      ?>
-    </div>
+    ?>
 
- 
-
-  <!-- <div class="y">
-
-    <div class="image-box">
-      <img src="img/sushi.jpg">
-      <div class="box-content">
-        
-        <div class="box-content__upper">
-          <div class="icon--likes">
-            <i class="fa fa-heart"></i>
-            <p>682</p>
-          </div>
-          <div class="icon--add">
-            <i class="fa fa-plus"></i>
-          </div>
-        </div>
-        <div class="box-content__lower">
-          <div class="user">
-            <div class="user__avatar"><img src="img/colette.jpg" alt=""></div>
-            <div class="user__name"><p> Christine Danial </p></div>
-          </div>
-        </div>
-        <div class="btm-r8">
-          <div class="icon--download">
-            <i class="fa fa-download"></i>
-          </div>
-        </div>
-      </div>
-     </div>
-
-
-     <div class="image-box">
-      <img src="img/pa.jpg">
-      <div class="box-content">
-        
-        <div class="box-content__upper">
-          <div class="icon--likes">
-            <i class="fa fa-heart"></i>
-            <p>682</p>
-          </div>
-          <div class="icon--add">
-            <i class="fa fa-plus"></i>
-          </div>
-        </div>
-        <div class="box-content__lower">
-          <div class="user">
-            <div class="user__avatar"><img src="img/colette.jpg" alt=""></div>
-            <div class="user__name"><p> Christine Danial </p></div>
-          </div>
-        </div>
-        <div class="btm-r8">
-          <div class="icon--download">
-            <i class="fa fa-download"></i>
-          </div>
-        </div>
-      </div>
-     </div>
-   
-    
-     <div class="image-box">
-      <img src="img/Chewy-Brownies.jpg">
-      <div class="box-content">
-        
-        <div class="box-content__upper">
-          <div class="icon--likes">
-            <i class="fa fa-heart"></i>
-            <p>682</p>
-          </div>
-          <div class="icon--add">
-            <i class="fa fa-plus"></i>
-          </div>
-        </div>
-        <div class="box-content__lower">
-          <div class="user">
-            <div class="user__avatar"><img src="img/colette.jpg" alt=""></div>
-            <div class="user__name"><p> Christine Danial </p></div>
-          </div>
-        </div>
-        <div class="btm-r8">
-          <div class="icon--download">
-            <i class="fa fa-download"></i>
-          </div>
-        </div>
-      </div>
-     </div>
-
-     <div class="image-box">
-      <img src="img/pan00.jpg">
-      <div class="box-content">
-        
-        <div class="box-content__upper">
-          <div class="icon--likes">
-            <i class="fa fa-heart"></i>
-            <p>682</p>
-          </div>
-          <div class="icon--add">
-            <i class="fa fa-plus"></i>
-          </div>
-        </div>
-        <div class="box-content__lower">
-          <div class="user">
-            <div class="user__avatar"><img src="img/colette.jpg" alt=""></div>
-            <div class="user__name"><p> Christine Danial </p></div>
-          </div>
-        </div>
-        <div class="btm-r8">
-          <div class="icon--download">
-            <i class="fa fa-download"></i>
-          </div>
-        </div>
-      </div>
-     </div>
-
-     <div class="image-box">
-      <img src="img/c.jpg">
-      <div class="box-content">
-        
-        <div class="box-content__upper">
-          <div class="icon--likes">
-            <i class="fa fa-heart"></i>
-            <p>682</p>
-          </div>
-          <div class="icon--add">
-            <i class="fa fa-plus"></i>
-          </div>
-        </div>
-        <div class="box-content__lower">
-          <div class="user">
-            <div class="user__avatar"><img src="img/colette.jpg" alt=""></div>
-            <div class="user__name"><p> Christine Danial </p></div>
-          </div>
-        </div>
-        <div class="btm-r8">
-          <div class="icon--download">
-            <i class="fa fa-download"></i>
-          </div>
-        </div>
-      </div>
-     </div>
-
-     <div class="image-box">
-      <img src="img/cup.jpg">
-      <div class="box-content">
-        
-        <div class="box-content__upper">
-          <div class="icon--likes">
-            <i class="fa fa-heart"></i>
-            <p>682</p>
-          </div>
-          <div class="icon--add">
-            <i class="fa fa-plus"></i>
-          </div>
-        </div>
-        <div class="box-content__lower">
-          <div class="user">
-            <div class="user__avatar"><img src="img/colette.jpg" alt=""></div>
-            <div class="user__name"><p> Christine Danial </p></div>
-          </div>
-        </div>
-        <div class="btm-r8">
-          <div class="icon--download">
-            <i class="fa fa-download"></i>
-          </div>
-        </div>
-      </div>
-     </div>
-  </div> -->
 </div>
 <!---------------------------- Photo Grid Desktop View Ends Here(4 cols)  ----------------------------------->
 
@@ -1043,16 +865,6 @@ $row = mysqli_fetch_assoc($res);
      </div>
   </div>
 </section>
-
-<!-- <div class='cart' id='cart'>
- <div class='title'>
-  CART
- </div><hr/>
- <div id='title'></div>
-</div> -->
-
-
-
 
 
 <?php
