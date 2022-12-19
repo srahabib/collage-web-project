@@ -35,7 +35,7 @@
 
 1. Create sql table
 2. Insert Values (manually = wasn't the best thing to do)
-   next time -> webscrap
+   next time -> webscrape
 3. Fetch Data using php
 
 ## Display multidimensional Gallery
