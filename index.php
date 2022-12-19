@@ -6,6 +6,13 @@ $id = $_SESSION["id"];
 $res = mysqli_query($conn, "SELECT * FROM tb_user WHERE id = $id");
 $row = mysqli_fetch_assoc($res);
 }
+
+
+// get id of each item to be used later 
+//if (isset($_POST['add'])) {
+  //print_r($_POST['product_id']);
+//}
+
 ?>
 
 
@@ -32,8 +39,6 @@ $row = mysqli_fetch_assoc($res);
       
        <div class="logo">Post</div>
 
-
-      
        <!-- NAVIGATION MENU -->
       
       <ul class="nav-links">
@@ -124,15 +129,11 @@ $row = mysqli_fetch_assoc($res);
       <h1 class="fancy">EXPLORE</h1>
     </div>
 
-   
-    
 
-    <!---------------------------- Photo Grid Desktop View Strarts Here  ----------------------------------->
+
+<!---------------------------- Photo Grid Desktop View Strarts Here  ----------------------------------->
 <div class="gallery">
       <?php
-      // component("fds","23","img/c.jpg","1");
-
-      
     for ($col = 0; $col < 4; $col++) {
       echo "<div class='y'>";
       $result = mysqli_query($conn,"SELECT * FROM Prouducttb");
@@ -145,10 +146,8 @@ $row = mysqli_fetch_assoc($res);
               $counter++;
           }  
           echo "</div>";
-      };    
-
+        };    
     ?>
-
 </div>
 <!---------------------------- Photo Grid Desktop View Ends Here(4 cols)  ----------------------------------->
 

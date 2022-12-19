@@ -93,8 +93,8 @@
             <h3 class="col-title">Info</h3>
             <nav class="col-list">
               <ul>
-                <li><a href="#">Formats</a></li>
-                <li><a href="#">Compression</a></li>
+                <li><a href="#">Food</a></li>
+                <li><a href="#">Important</a></li>
                 <li><a href="#">Pricing</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#">Status</a></li>
@@ -105,8 +105,8 @@
             <h3 class="col-title">Resources</h3>
             <nav class="col-list">
               <ul>
-                <li><a href="#">Developer API</a></li>
-                <li><a href="#">Tools</a></li>
+                <li><a href="#">Something</a></li>
+                <li><a href="#">Text</a></li>
                 <li><a href="#">Blog</a></li>
               </ul>
             </nav>
@@ -124,7 +124,7 @@
           </div>
         </div>
         <!-- There is no copyright. use as you wish -->
-        <div class="copyright">© 2022 – All Rights Reserved. (Not real)</div>
+        <div class="copyright">© 2022 – All Rights Reserved.</div>
       </div>
     </footer>
   </body>

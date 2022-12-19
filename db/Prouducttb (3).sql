@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db:3306
--- Generation Time: Dec 17, 2022 at 04:06 PM
+-- Generation Time: Dec 17, 2022 at 10:07 PM
 -- Server version: 8.0.29
 -- PHP Version: 8.0.19
 
@@ -43,7 +43,12 @@ INSERT INTO `Prouducttb` (`id`, `product_name`, `product_price`, `product_image`
 (2, 'Sushi', 40, 'img/sushi.jpg'),
 (3, 'chocolate brownies', 18, 'img/smol.jpg'),
 (4, 'pan cake', 25, 'img/pan00.jpg'),
-(5, 'Chewy Brownies', 16, 'img/Chewy-Brownies.jpg');
+(5, 'Chewy Brownies', 16, 'img/Chewy-Brownies.jpg'),
+(6, 'cupcake', 20, 'img/cup.jpg'),
+(7, 'Pasta', 36, 'img/pa.jpg'),
+(8, 'Cinnamon Rolls', 34, 'img/cc.jpg'),
+(9, 'blueberry Cupcake', 19, 'img/c0.jpg'),
+(10, 'Strawberry Pancake', 22, 'img/straw.jpg');
 
 --
 -- Indexes for dumped tables
@@ -63,7 +68,7 @@ ALTER TABLE `Prouducttb`
 -- AUTO_INCREMENT for table `Prouducttb`
 --
 ALTER TABLE `Prouducttb`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
